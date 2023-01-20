@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>All Skills</title>
+</head>
+<body>
+    <table id="list">
+        <thead>
+          <tr>
+            <th>Skills</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% skill.forEach(function(m) { %>
+            <tr>
+              <td>
+                <form action="/skills/<%= m.skill %>?_method=DELETE" class="delete-form" method="POST">
+                    <button type="submit" >X</button>
+                  </form>
+                <%= m.skill %></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+</body>
+</html>
